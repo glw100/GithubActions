@@ -31,5 +31,108 @@ namespace GithubActionsLab
         }
 
         // Implement 3 tests per operation, following a similar pattern as above
+        // Unit Test for Sbustract
+        [Test]
+        public void Subtract_Valid_Zeng()
+        {
+            Assert.AreEqual(1, Program.Subtract("3", "2"));
+            Assert.AreEqual(-1, Program.Subtract("2", "3"));
+            Assert.AreEqual(-2, Program.Subtract("5", "7"));
+        }
+
+        [Test]
+        public void Subtract_Invalid_Zeng()
+        {
+            Assert.Throws<FormatException>(() => Program.Subtract("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Subtract("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Subtract("a", "a"));
+        }
+
+        [Test]
+        public void Subtract_Null_Zeng()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, null));
+        }
+
+        // Unit Test for Multiply
+        [Test]
+        public void Multiply_Valid_Zeng()
+        {
+            Assert.AreEqual(6, Program.Multiply("3", "2"));
+            Assert.AreEqual(6, Program.Multiply("2", "3"));
+            Assert.AreEqual(0, Program.Multiply("0", "7"));
+            Assert.AreEqual(-14, Program.Multiply("2", "-7"));
+        }
+
+        [Test]
+        public void Multiply_Invalid_Zeng()
+        {
+            Assert.Throws<FormatException>(() => Program.Multiply("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "a"));
+        }
+
+        [Test]
+        public void Multiply_Null_Zeng()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, null));
+        }
+        
+        // unit test for divide
+        [Test]
+        public void Divide_Valid_Zeng()
+        {
+            Assert.AreEqual(2, Program.Divide("4", "2"));
+            Assert.AreEqual(0.5, Program.Divide("2", "4"));
+            Assert.AreEqual(0, Program.Divide("0", "7"));
+            Assert.AreEqual(-5, Program.Divide("10", "-2"));
+        }
+
+        [Test]
+        public void Divide_Invalid_Zeng()
+        {
+            Assert.Throws<FormatException>(() => Program.Divide("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "a"));
+        }
+
+        [Test]
+        public void Divide_Null_Zeng()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Divide("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, null));
+        }
+
+        // unit test for power
+        [Test]
+        public void Power_Valid_Zeng()
+        {
+            Assert.AreEqual(16, Program.Power("4", "2"));
+            Assert.AreEqual(8, Program.Power("2", "3"));
+            Assert.AreEqual(0, Program.Power("0", "7"));
+            Assert.AreEqual(0.25, Program.Power("2", "-2"));
+            // Assert.AreEqual(1, Program.Power("2", "-2"));
+        }
+
+        [Test]
+        public void Power_Invalid_Zeng()
+        {
+            Assert.Throws<FormatException>(() => Program.Power("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "a"));
+        }
+
+        [Test]
+        public void Power_Null_Zeng()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Power("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, null));
+        }
     }
 }
